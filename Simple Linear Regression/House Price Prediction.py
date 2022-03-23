@@ -10,12 +10,12 @@ print(data.describe())
 x = data["house age"]
 y1 = data["house price of unit area"]
 
-l = 0.001
-m = 0
-c = 0
-n = float(len(data))
-ypred=0
-epochs = 10000
+l = 0.001            v      #learning rate
+m = 0                       #slope
+c = 0                       #y-intercept
+n = float(len(data))        #number of records in data
+ypred=0                     #Prediciton
+epochs = 10000                
 for i in range(epochs):
     ypred = m * x + c
     dm = 1 / n * sum((ypred - y1) * x)
@@ -26,6 +26,7 @@ print('Mean Square Error', metrics.mean_squared_error(y1, ypred))
 
 Pred = m * x + c
 
+#plotting
 plt.scatter(x, y1)
 plt.xlabel('houseage', fontsize=20)
 plt.ylabel('house price of unit area', fontsize=20)
@@ -43,7 +44,7 @@ print('Your predicted PRICE is ' + str(float(y_test)))
 
 x1 = data["distance to the nearest MRT station"]
 
-##### standardizing the data using the formula: x-mean/Standard_deviation
+##### standardizing the data using the formula: (x - mean)/Standard_deviation
 x1 = (x1 - 1083.885689) / 1260.584387
 
 l1 = 0.01
