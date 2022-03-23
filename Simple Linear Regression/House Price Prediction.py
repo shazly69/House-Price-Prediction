@@ -5,12 +5,12 @@ from sklearn import linear_model
 from sklearn import metrics
 
 # 1st Model using X: House Age
-data = pd.read_csv(r"C:\Users\yousu\Desktop\Machine Learning\assignment\assignment1_dataset.csv")
+data = pd.read_csv(r"C:*****\Machine Learning\DataSet.csv")  #Adjust path for running the program
 print(data.describe())
 x = data["house age"]
 y1 = data["house price of unit area"]
 
-l = 0.001            v      #learning rate
+l = 0.001                   #learning rate
 m = 0                       #slope
 c = 0                       #y-intercept
 n = float(len(data))        #number of records in data
